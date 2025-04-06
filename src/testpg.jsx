@@ -10,7 +10,7 @@ function Testpg() {
   useEffect(() => {
     //fetch('./pages/test.md') // Adjust the path to your markdown file
       
-    fetch('./src/pages/test.md') // Adjust the path to your markdown file
+    fetch('/pages/test.md') // Adjust the path to your markdown file
     .then(response => response.text())
       .then(text => setMarkdown(text))
       .catch(error => console.error('Error fetching markdown:', error));

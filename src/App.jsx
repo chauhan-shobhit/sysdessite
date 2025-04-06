@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 
 
 import Testpg from './testpg';
-import Home from './home';
+import Home from './Home';
 
 function App() {
   

@@ -1,42 +1,92 @@
 #root {
-  max-width: 1280px;
+  width: 100vw;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
+  text-align: initial;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+
+
+.markdown-container {
+  text-align: left; /* Align text to the left */
+  margin: 0 auto; /* Center the container */
+  padding:1rem; /* Add padding for better readability */
+
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page-container {
+  display: grid;
+  grid-template-columns: 10% 70% 20% ;
+  gap: 1rem;
+  padding: 0; /* Remove padding */
+  margin:0; /* Remove margin */
+  width:100%; /* Set width to 100% */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+
+.left-section{
+  background-color: #f4f4f4;
+  padding: 1rem;
+  height: 100vh;
+
 }
 
-.card {
-  padding: 2em;
+.middle-section{
+  background-color: #ffffff;
+  padding: 1rem; /* Add padding for better readability */
+  overflow-y: auto; /* Enable vertical scrolling */
+  text-align: left; /* Align text to the left */
 }
 
-.read-the-docs {
-  color: #888;
+.right-section{
+  background-color: #f9f9f9;
+  padding: 1rem;
+  height: 100vh;
+  position: sticky;
+  top: 0; /* Stick to the top of the viewport */
+  overflow-y: auto;
+}
+
+/* Table of contents */
+.toc {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item a {
+  text-decoration: none;
+  color: #333; /* Default text color */
+  padding: 0.8rem; /* Add padding for better readability */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.toc-item a:hover {
+  color: #292725 ;
+  text-decoration: underline;;
+}
+
+.active-toc-item {
+  color: #141515 !important;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.toc-level-1 {
+  font-weight: bold;;
+}
+
+.toc-level-2{
+  margin-left: 1rem;
+
+}
+
+.toc-level-3{
+  margin-left: 2rem;
+  
 }

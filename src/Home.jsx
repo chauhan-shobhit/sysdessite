@@ -27,13 +27,11 @@ function Home() {
   return (
     <>
   
-  <div>
+<div>
+
   <ReactMarkdown>{markdown}</ReactMarkdown>
 
-            
-          
-
-            </div>
+</div>
       
     </>
   )

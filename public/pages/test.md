@@ -1,19 +1,4 @@
-
-
-![](./src/pages/digitwin.jpeg)
-
----
-
 ## 1. Introduction: The Rise of the Digital Twin in Manufacturing
-
-```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
-```
-
 
 The Fourth Industrial Revolution (Industry 4.0) is transforming manufacturing. Central to this transformation is the concept of the **Digital Twin**: a dynamic, virtual representation of a physical asset, process, or system. In a manufacturing context, a Digital Twin platform integrates real-time data from the factory floor with physics-based models, simulation capabilities, and data analytics to provide unprecedented insights, optimize operations, predict failures, and enable smarter decision-making.
 
@@ -34,11 +19,12 @@ A thorough understanding of requirements is the foundation of any robust system 
 These define *what* the system must do:
 
 *   **FR1: Real-time Sensor Data Ingestion:** The platform must ingest data streams from a wide variety of sensors deployed across the manufacturing plant. This includes data like temperature, pressure, vibration, rotational speed, voltage, current, flow rate, chemical composition, acoustic signatures, machine status codes (e.g., running, idle, fault), GPS/positioning data (for moving assets like AGVs), and potentially video/image feeds. Data arrives continuously and at varying frequencies.
-*   **FR2: Physical Asset Representation (Twin Creation & Management):** The system must allow users (e.g., plant engineers, data scientists) to define and manage digital representations (twins) of physical assets (e.g., CNC machines, robotic arms, conveyors, furnaces, AGVs, even entire production lines). This includes:
-    *   Defining asset types and their associated properties (static metadata like model number, installation date, and dynamic state variables like temperature, RPM).
-    *   Instantiating specific twins for individual physical assets.
-    *   Modeling relationships between assets (e.g., robot A feeds machine B, machine C is part of production line X).
-    *   Managing the lifecycle of twins (creation, updates, decommissioning).
+*   **FR2: Physical Asset Representation (Twin Creation & Management):** 
+The system must allow users (e.g., plant engineers, data scientists) to define and manage digital representations (twins) of physical assets (e.g., CNC machines, robotic arms, conveyors, furnaces, AGVs, even entire production lines). This includes:
+*   Defining asset types and their associated properties (static metadata like model number, installation date, and dynamic state variables like temperature, RPM).
+*   Instantiating specific twins for individual physical assets.
+*   Modeling relationships between assets (e.g., robot A feeds machine B, machine C is part of production line X).
+*   Managing the lifecycle of twins (creation, updates, decommissioning).
 *   **FR3: Real-time State Update:** The ingested sensor data must be processed and used to update the corresponding state variables of the digital twins in near real-time, ensuring the virtual representation accurately reflects the current condition of the physical asset.
 *   **FR4: Simulation & What-If Analysis:** The platform must support running simulations based on the current or historical state of digital twins. This includes:
     *   Predictive Maintenance: Using models to predict remaining useful life (RUL) or potential failures based on current operational data.
@@ -469,7 +455,7 @@ Let's dive deeper into the critical components.
     *   Authorization: IoT policies define which devices can publish/subscribe to which MQTT topics.
     *   Routing Rules: Configure rules to forward incoming messages from specific topics to the Data Processing layer (e.g., trigger a Lambda function, put messages onto a Kinesis/Event Hub stream, or directly into a Kafka topic).
 
-### [5.3. Data Processing & Normalization Service](#heading1)
+### 5.3. Data Processing & Normalization Service
 
 *   **Responsibilities:** Parse diverse message formats, validate data, normalize units and timestamps, enrich with context (e.g., asset ID from sensor ID), route data for state update vs. archival.
 *   **Technology Choice:** Apache Flink.
